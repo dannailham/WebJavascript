@@ -1,0 +1,165 @@
+### PRODUCT
+GET http://localhost:5000/products
+
+
+###
+GET http://localhost:5000/products/1
+
+
+###
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "id": 1,
+    "nama": "kain",
+    "jenis": "beda padat",
+    "jumlah": 1,
+    "harga": 125.001,
+    "vendorId": "4"
+
+}
+
+
+###
+PATCH http://localhost:5000/products/1
+Content-Type: application/json
+
+{
+
+    "nama": "Besi",
+    "jenis": "beda keras",
+    "jumlah": 55,
+    "harga": 150.001,
+    "vendorId": "3"
+
+}
+
+ 
+###
+DELETE http://localhost:5000/products
+
+
+### ORDER
+GET http://localhost:5000/orders
+
+
+###
+GET http://localhost:5000/orders/1
+
+
+###
+POST http://localhost:5000/orders
+Content-Type: application/json
+
+{
+    "id_order": "C123",
+    "customer": "KALBE",
+    "project": "PANGGUNG",
+    "order_in": "1 JULI 2023",
+    "order_out": "25 JULI 2023",
+    "harga_order": "25,000,000",
+    "barang": "Balok",
+    "productId": "3"
+
+}
+
+
+###
+PATCH http://localhost:5000/orders/1
+Content-Type: application/json
+
+{
+
+    "customer": "KALBE",
+    "project": "PANGGUNG",
+    "order_in": "1 JULI 2023",
+    "order_out": "25 JULI 2023",
+    "harga_order": "25,000,000",
+    "barang": "Balok",
+    "productId": "2"
+
+}
+
+ 
+###
+DELETE http://localhost:5000/orders
+
+
+###VENDOR
+GET http://localhost:5000/vendors?search_query=john&page=0&limit=10
+
+
+###
+GET http://localhost:5000/vendors/1
+
+
+###
+POST http://localhost:5000/vendors
+Content-Type: application/json
+
+{
+    "id_vendor": "C123",
+    "name": "KALBE",
+    "person": "PANGGUNG",
+    "email": "1 JULI 2023",
+    "phone": "25 JULI 2023",
+    "address": "25,000,000"
+
+}
+
+
+###
+PATCH http://localhost:5000/vendors/1
+Content-Type: application/json
+
+{
+
+    "id_vendor": "C123",
+    "name": "KALBE",
+    "person": "PANGGUNG",
+    "email": "1 JULI 2023",
+    "phone": "25 JULI 2023",
+    "address": "65,000,000"
+
+}
+
+ 
+###
+DELETE http://localhost:5000/vendors
+
+
+###user
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJkYW5uYSIsImVtYWlsIjoiZGFuQGdtYWlsLmNvbSIsImlhdCI6MTcwMjkyMTAwNCwiZXhwIjoxNzAyOTIxMDE5fQ.2fEAXe8J3dYDCy6ghnbNl7VCbTqWVNaXLbdBeR3hDgU
+
+
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "danna",
+    "email": "dan@gmail.com",
+    "password":"123456",
+    "confPassword": "123456"
+}
+
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+
+    "email": "dan@gmail.com",
+    "password":"123456"
+
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
